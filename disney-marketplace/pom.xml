@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.nuxeo.presales</groupId>
+    <artifactId>nuxeo-disney-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+
+
+  <groupId>org.nuxeo.presales.disney.marketplace</groupId>
+  <artifactId>marketplace-parent</artifactId>
+  <packaging>pom</packaging>
+  <name>Nuxeo Disney :: Marketplace parent</name>
+  <description>Convenience POM for running sub-modules</description>
+
+  <modules>
+    <module>marketplace</module>
+  </modules>
+
+  <profiles>
+    <profile>
+      <id>ftest</id>
+      <modules>
+        <module>ftest/webdriver</module>
+      </modules>
+    </profile>
+  </profiles>
+
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.nuxeo.presales.disney.marketplace</groupId>
+        <artifactId>nxr</artifactId>
+        <version>${nuxeo.disney.version}</version>
+        <type>zip</type>
+      </dependency>
+      <dependency>
+        <groupId>org.nuxeo.presales.disney.marketplace</groupId>
+        <artifactId>marketplace-nuxeo-disney</artifactId>
+        <version>${nuxeo.disney.version}</version>
+        <type>zip</type>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+</project>

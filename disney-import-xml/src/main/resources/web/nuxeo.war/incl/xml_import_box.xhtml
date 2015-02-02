@@ -1,0 +1,42 @@
+<c:if test="true"
+  xmlns:nxu="http://nuxeo.org/nxweb/util"
+  xmlns:ui="http://java.sun.com/jsf/facelets"
+  xmlns:f="http://java.sun.com/jsf/core"
+  xmlns:a4j="http://richfaces.org/a4j"
+  xmlns:rich="http://richfaces.org/rich"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:c="http://java.sun.com/jstl/core"
+  xmlns:nxh="http://nuxeo.org/nxweb/html"
+  xmlns:nxl="http://nuxeo.org/nxforms/layout"
+  xmlns:nxd="http://nuxeo.org/nxweb/document">
+
+<a4j:region>
+
+    <h3><h:outputText value="#{messages['label.xml.import.title']}" /></h3>
+
+    <div class="content">
+      <a4j:outputPanel id="xml_import_panel" layout="block">
+        <h:form id="importXmlRichUploadForm" execute="@this" enctype="multipart/form-data" disableDoubleClickShield="true">
+          <a4j:outputPanel id="xml_import_form" layout="block">
+              <rich:fileUpload fileUploadListener="#{xmlImportActions.uploadListener}"
+                maxFilesQuantity="1" immediateUpload="true"
+                acceptedTypes="xml"
+                listHeight="60"
+                execute="@this"
+                locale="#{localeSelector.localeString}"
+                id="xmlFileUpload" />
+            <p class="buttonsGadget">
+                <a4j:commandButton value="#{messages['command.xml.process']}"
+                  action="#{xmlImportActions.importXMLFile}"
+                  oncomplete="jQuery.fancybox.close();"
+                  styleClass="button" />
+                <button class="button" onclick="jQuery.fancybox.close(); return false;">#{messages['command.cancel']}</button>
+            </p>
+          </a4j:outputPanel>
+        </h:form>
+      </a4j:outputPanel>
+    </div>
+
+</a4j:region>
+
+</c:if>
