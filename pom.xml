@@ -29,6 +29,7 @@
   <modules>
     <module>disney-import-xml</module>
     <module>disney-marketplace</module>
+      <module>disney-core</module>
   </modules>
 
   <dependencyManagement>

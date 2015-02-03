@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<component name="org.nuxeo.presales.disney.core.securitypolicy">
+    <extension target="org.nuxeo.ecm.core.security.SecurityService" point="policies">
+        <policy 
+                name="DisneyPolicy"
+                class="org.nuxeo.presales.disney.core.ConfidentialityPolicy"
+                order="0" />
+    </extension>
+</component>

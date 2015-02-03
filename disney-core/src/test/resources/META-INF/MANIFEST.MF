@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-Vendor: Nuxeo
+Bundle-Version: 1.0.0
+Bundle-Name: disney-core-test
+Bundle-ManifestVersion: 1
+Bundle-SymbolicName: org.nuxeo.presales.disney.core.test
+

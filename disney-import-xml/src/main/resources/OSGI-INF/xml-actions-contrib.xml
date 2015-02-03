@@ -1,7 +1,6 @@
-<component name="org.nuxeo.ecm.csv.actions">
+<component name="org.nuxeo.presales.disney.import.actions">
 
-  <extension target="org.nuxeo.ecm.platform.actions.ActionService"
-    point="actions">
+  <extension target="org.nuxeo.ecm.platform.actions.ActionService" point="actions">
 
     <action id="xmlImportAction" order="40" label="label.xml.import" type="fancybox"
       icon="/icons/action_add_file.gif">
