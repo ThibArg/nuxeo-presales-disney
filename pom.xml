@@ -14,8 +14,7 @@
   <name>disney Demo :: Parent pom</name>
   <packaging>pom</packaging>
 
-
-  <description />
+  <description/>
 
   <properties>
     <nuxeo.disney.version>${project.version}</nuxeo.disney.version>
@@ -56,6 +55,11 @@
         <artifactId>disney-import-xml</artifactId>
         <version>${nuxeo.disney.version}</version>
       </dependency>
+        <dependency>
+            <groupId>org.nuxeo.presales</groupId>
+            <artifactId>disney-core</artifactId>
+            <version>${nuxeo.disney.version}</version>
+        </dependency>
     </dependencies>
   </dependencyManagement>
 
