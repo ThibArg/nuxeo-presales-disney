@@ -24,6 +24,8 @@ public class ConfidentialityPolicy
             Document document, ACP mergedAcp, Principal principal, String permission,
             String[] resolvedPermissions, String[] additionalPrincipals) {
 
+        if (!permission.equals("READ")) return Access.UNKNOWN;
+        
         String level = null;
 
         try {
