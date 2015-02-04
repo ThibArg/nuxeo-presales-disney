@@ -1,19 +1,32 @@
 <component name="org.nuxeo.presales.disney.import.actions">
 
-  <extension target="org.nuxeo.ecm.platform.actions.ActionService" point="actions">
+    <extension target="org.nuxeo.ecm.platform.actions.ActionService" point="actions">
+        <action id="xmlImportAction" order="40" label="label.xml.import" type="fancybox"
+          icon="/icons/action_add_file.gif">
+          <category>SUBVIEW_UPPER_LIST</category>
+          <properties>
+            <property name="include">/incl/xml_import_box.xhtml</property>
+            <property name="autoDimensions">false</property>
+            <property name="width">90%</property>
+            <property name="height">90%</property>
+            <property name="modal">true</property>
+          </properties>
+          <filter-id>importXML</filter-id>
+        </action>
+    </extension>
 
-    <action id="xmlImportAction" order="40" label="label.xml.import" type="fancybox"
-      icon="/icons/action_add_file.gif">
-      <category>SUBVIEW_UPPER_LIST</category>
-      <properties>
-        <property name="include">/incl/xml_import_box.xhtml</property>
-        <property name="autoDimensions">false</property>
-        <property name="width">90%</property>
-        <property name="height">90%</property>
-        <property name="modal">true</property>
-      </properties>
-      <filter-id>importFile</filter-id>
-    </action>
-
-  </extension>
+    <extension point="filters" target="org.nuxeo.ecm.platform.actions.ActionService">
+        <filter id="importXML">
+            <rule grant="true">
+                <permission>AddChildren</permission>
+                <facet>Folderish</facet>
+                <condition>
+                    #{typeManager.getAllowedSubTypes(document.getType(),
+                    document).size()
+                    &gt; 0}
+                </condition>
+            </rule>
+        </filter>
+    </extension>
+    
 </component>
