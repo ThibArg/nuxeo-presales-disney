@@ -6,4 +6,4 @@ nuxeo.template.includes=common
 
 nuxeo.db.xaMode=false
 
-org.nuxeo.ecm.instance.description=Nuxeo Solocal POC
+org.nuxeo.ecm.instance.description= Disney DAM Demo
