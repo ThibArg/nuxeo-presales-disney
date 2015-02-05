@@ -1,0 +1,8 @@
+<component name="org.nuxeo.presales.disney.operations.AddVideoCommentOp">
+
+  <extension target="org.nuxeo.ecm.core.operation.OperationServiceComponent"
+    point="operations" >
+      <operation class="org.nuxeo.presales.disney.operations.AddVideoCommentOp" />
+   </extension>
+    
+</component>

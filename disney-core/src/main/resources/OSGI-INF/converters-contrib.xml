@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<component name="org.nuxeo.presales.disney.core.converters">
+
+	<require>org.nuxeo.ecm.platform.commandline.executor.service.defaultContrib
+	</require>
+	<require>org.nuxeo.ecm.platform.convert.plugins</require>
+
+	<extension
+		target="org.nuxeo.ecm.platform.commandline.executor.service.CommandLineExecutorComponent"
+		point="command">
+		<command name="ffmpeg-extract-one-frame" enabled="true">
+			<commandLine>ffmpeg</commandLine>
+			<parameterString>-y -ss #{position} -i #{sourceFilePath} -vframes 1 -f image2 #{targetFilePath}</parameterString>
+			<installationDirective>You need to install ffmpeg.
+			</installationDirective>
+		</command>
+	</extension>
+
+
+	<extension target="org.nuxeo.ecm.core.convert.service.ConversionServiceImpl"
+		point="converter">
+		<converter name="ffmpeg-extract-one-frame"
+			class="org.nuxeo.ecm.platform.convert.plugins.CommandLineConverter">
+			<parameters>
+				<parameter name="CommandLineName">ffmpeg-extract-one-frame</parameter>
+			</parameters>
+		</converter>
+	</extension>
+</component>
